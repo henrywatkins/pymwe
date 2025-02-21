@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024-present Henry Watkins <h.watkins@ucl.ac.uk>
-#
-# SPDX-License-Identifier: MIT
 import numpy as np
 from numba import jit
+from sklearn.feature_extraction.text import CountVectorizer
+import numpy as np
+import re
 
 
 @jit(nopython=True, parallel=True)
@@ -58,10 +58,6 @@ def cfeatures(group_ids, data, top_k=5, show_values=False):
     return top_cluster_vars
 
 
-from sklearn.feature_extraction.text import CountVectorizer
-import numpy as np
-
-
 def find_mwe(texts, n=10, min_df=5, max_df=0.9):
     """find the meaningful multi-word expressions in a list of texts
 
@@ -80,7 +76,7 @@ def find_mwe(texts, n=10, min_df=5, max_df=0.9):
     """
     # Tokenize to find unigrams and bigrams
     vectorizer = CountVectorizer(
-        ngram_range=(1, 2), min_df=5, max_df=0.9, stop_words="english"
+        ngram_range=(1, 2), min_df=min_df, max_df=max_df, stop_words="english"
     )
     X = np.asarray(vectorizer.fit_transform(texts).sum(axis=0)).squeeze()
 

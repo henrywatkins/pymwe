@@ -8,9 +8,13 @@ authors = [
 dependencies = [
     "scikit-learn>=1.6.1",
     "nltk>=3.9.1",
+    "numba>=0.61.0",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
+
+[project.scripts]
+pymwe-cli = "pymwe.cli:main"
 
 [build-system]
 requires = ["hatchling"]
