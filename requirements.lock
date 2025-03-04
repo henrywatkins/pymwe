@@ -12,6 +12,7 @@
 -e file:.
 click==8.1.8
     # via nltk
+    # via pymwe
 joblib==1.4.2
     # via nltk
     # via scikit-learn

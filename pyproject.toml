@@ -1,7 +1,7 @@
 [project]
 name = "pymwe"
 version = "0.1.0"
-description = "Add your description here"
+description = "A Python package for finding meaningful multi-word expressions in text"
 authors = [
     { name = "Henry Watkins", email = "h.watkins@ucl.ac.uk" }
 ]
@@ -9,12 +9,14 @@ dependencies = [
     "scikit-learn>=1.6.1",
     "nltk>=3.9.1",
     "numba>=0.61.0",
+    "click>=8.1.7",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
 
 [project.scripts]
 pymwe-cli = "pymwe.cli:main"
+pymwe-cfeatures = "pymwe.cli:cfeatures_cli"
 
 [build-system]
 requires = ["hatchling"]
@@ -25,7 +27,7 @@ managed = true
 dev-dependencies = [
     "pytest>=8.3.4",
     "black>=25.1.0",
-    "isort>=6.0.0",
+    "isort>=6.0.1",
 ]
 
 [tool.hatch.metadata]

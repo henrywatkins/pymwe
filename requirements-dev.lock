@@ -14,9 +14,10 @@ black==25.1.0
 click==8.1.8
     # via black
     # via nltk
+    # via pymwe
 iniconfig==2.0.0
     # via pytest
-isort==6.0.0
+isort==6.0.1
 joblib==1.4.2
     # via nltk
     # via scikit-learn
